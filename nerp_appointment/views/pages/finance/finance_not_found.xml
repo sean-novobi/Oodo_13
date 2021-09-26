@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="finance_appointment_not_found" name="Finance Appointment Not Found">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty"/>
+            <div style="margin-top: 180px;width: 600px;font-weight: 600;font-size: 15px;margin-left: auto;margin-right: auto;">
+                An error has occurred, please contact Novobi Support Specialist at 512-522-2837
+            </div>
+            <div style="height: 100px;background: #805074;"/>
+            <div id="wrap" class="oe_structure oe_empty"/>
+        </t>
+    </template>
+</odoo>

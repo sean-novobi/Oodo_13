@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="finance_appointment_customer_info_form" name="Finance Appointment Customer Info Form">
+        <form id="appointment-form" class="odoo-accounting-book-form custom-website-recaptchav3"
+              t-attf-action="#{action}" method="POST">
+            <fieldset id='partner_info' t-att-data-is-reschedule="reschedule">
+                <div class="i-panel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="fname">First name*</label>
+                                <input type="text" id="fname" name="fname" class="form-control" required="1"
+                                       t-att-value="'fname' in partner_data and partner_data['fname']"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="lname">Last name*</label>
+                                <input type="text" id="lname" name="lname" class="form-control" required="1"
+                                       t-att-value="'lname' in partner_data and partner_data['lname']"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="email">Your email*</label>
+                                <input type="text" id="email" name="email" class="form-control" required="1"
+                                       t-att-value="'email' in partner_data and partner_data['email']"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="company_name">Company name*</label>
+                                <input type="text" id="company_name" name="company_name"
+                                       class="form-control" required="1"
+                                       t-att-value="'commercial_company_name' in partner_data and partner_data['commercial_company_name']"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="phone">Phone number*</label>
+                                <input type="text" id="phone" name="phone" class="form-control" required="1"
+                                       t-att-value="'phone' in partner_data and partner_data['phone']"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-panel">
+                    <h4 class="o-header">What can we do for you?</h4>
+                    <p class="t-header">Select the experiences you are interested in:</p>
+                    <t t-foreach="appointment_type.question_ids.filtered(lambda q: q.question_type == 'checkbox')"
+                       t-as="question">
+                        <div id="default-topics">
+                            <t t-foreach="question.answer_ids or []" t-as="answer">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input"
+                                           t-attf-id="question_#{question.id}_answer_#{answer.id}"
+                                           t-attf-name="question_#{question.id}_answer_#{answer.id}"
+                                           t-att-value="answer.name"/>
+                                    <label class="custom-control-label"
+                                           t-attf-for="question_#{question.id}_answer_#{answer.id}">
+                                        <t t-esc="answer.name"/>
+                                    </label>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                    <div class="custom-control custom-checkbox" id="other_topics">
+                        <input type="checkbox" class="custom-control-input" id="checkbox_other"/>
+                        <label class="custom-control-label" for="checkbox_other">Other (Please specify below)
+                        </label>
+                    </div>
+                    <t t-foreach="appointment_type.question_ids.filtered(lambda q: q.question_type == 'text')"
+                       t-as="question">
+                        <div class="form-group green-border-focus">
+                            <textarea class="form-control"
+                                      id="other_topics_desc"
+                                      t-att-required="question.question_required or None"
+                                      t-attf-name="question_#{question.id}"
+                                      t-att-placeholder="question.placeholder" rows="6"/>
+                        </div>
+                    </t>
+                    <t t-if="not reschedule">
+                        <button id="input_submit" type="submit" class="btn odoo-accounting-submit btn-block">
+                            <span>BOOK YOUR SESSION</span>
+                        </button>
+                    </t>
+                </div>
+            </fieldset>
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        </form>
+    </template>
+
+    <template id="novobi_appointment_customer_info_form" name="NOVOBI Appointment Customer Info Form">
+        <form id="appointment-form" class="odoo-accounting-book-form custom-website-recaptchav3"
+              t-attf-action="#{action}" method="POST">
+            <fieldset id='partner_info' t-att-data-is-reschedule="reschedule">
+                <!--            work email domain-->
+                <input type="hidden" name="employee" t-att-value="employee"/>
+                <!--            employee id-->
+                <input type="hidden" name="employee_id" t-att-value="employee_id"/>
+                <!-- Used to allow submitting the form after selecting a slot time on calendar -->
+                <input type="hidden" name="datetime_str" t-att-value="start_datetime_str"/>
+                <input type="hidden" name="duration" t-att-value="duration"/>
+                <input type="hidden" name="event_token" t-att-value="event_token"/>
+                <div class="i-panel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="name">Name*</label>
+                                <input type="text" id="name" name="name" class="form-control" required="1"
+                                       t-att-value="'name' in partner_data and partner_data['name']"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="email">Your email*</label>
+                                <input type="text" id="email" name="email" class="form-control" required="1"
+                                       t-att-value="'email' in partner_data and partner_data['email']"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="company_name">Company name</label>
+                                <input type="text" id="company_name" name="company_name"
+                                       class="form-control"
+                                       t-att-value="'commercial_company_name' in partner_data and partner_data['commercial_company_name']"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Material input -->
+                            <div>
+                                <label for="phone">Phone number</label>
+                                <input type="text" id="phone" name="phone" class="form-control"
+                                       t-att-value="'phone' in partner_data and partner_data['phone']"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="add_guests_button" class="row">
+                        <div class="col-lg-3">
+                            <!-- Material input -->
+                            <button id="add-guests" class="btn add-guests btn-block">
+                            <span>Add Guests</span>
+                        </button>
+                        </div>
+                    </div>
+                    <div id="add-guests-section" class="row" style="display: none;">
+                        <div class="col-lg-12">
+                            <!-- Material input -->
+                            <label for="guests_emails">Guests Emails ("," separated)</label>
+                            <textarea class="form-control"
+                                      id="guests_emails"
+                                      name="guests_emails"
+                                      placeholder="e.g. follower1@domain.com, ..." rows="3"/>
+                        </div>
+                    </div>
+                    <div id="subject_section" class="row">
+                        <div class="col-lg-12">
+                            <!-- Material input -->
+                            <div>
+                                <t t-if="appointment_type.appointment_type_website_question">
+                                    <label for="subject"><t t-esc="appointment_type.appointment_type_website_question"/></label>
+                                </t>
+                                <t t-else="">
+                                    <label for="subject">Subject</label>
+                                </t>
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject"
+                                       class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-panel">
+                    <t t-if="not reschedule">
+                        <button id="input_submit" type="submit" class="btn odoo-accounting-submit btn-block"
+                                disabled="1">
+                            <span>CONFIRM</span>
+                        </button>
+                    </t>
+                </div>
+            </fieldset>
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        </form>
+    </template>
+
+
+</odoo>

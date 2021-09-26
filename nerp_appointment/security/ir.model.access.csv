@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_calendar_event_stage_user,calendar_event_group_user,nerp_appointment.model_calendar_event_stage,base.group_user,1,1,1,1
+access_calendar_event_portal,calendar_event_group_portal,nerp_appointment.model_calendar_event,base.group_portal,1,1,1,1
+access_calendar_event_public,calendar_event_group_public,nerp_appointment.model_calendar_event,base.group_public,1,1,1,1
+access_service_packages_user,service_packages_group_user,nerp_appointment.model_service_packages,base.group_user,1,1,1,1
+access_service_packages_public,service_packages_group_public,nerp_appointment.model_service_packages,base.group_public,1,0,0,0

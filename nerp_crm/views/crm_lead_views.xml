@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_lead_view_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="note_url" widget="url" placeholder="e.g. www.odoo.com"/>
+                <field name="project_est_url" widget="url" placeholder="e.g. www.odoo.com"/>
+            </xpath>
+            <xpath expr="//group//group[4]" position="inside">
+                <field name="in_stagnant"/>
+            </xpath>
+            <xpath expr="//group//group[6]" position="inside">
+                <field name="in_stagnant"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Reporting">
+                    <group>
+                        <group string="Reporting">
+                            <field name="interest_type" options="{'no_create_edit': True, 'no_open': True}"/>
+                            <field name="odoo_level" options="{'no_create_edit': True, 'no_open': True}"/>
+                            <field name="compliance_types" options="{'no_create_edit': True, 'no_open': True}" widget="many2many_tags"/>
+                            <field name="industry_types" options="{'no_create_edit': True, 'no_open': True}" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Opportunity Tasks">
+                    <field name="opportunity_tasks" string="Task">
+                        <tree editable="bottom" options="{'no_create':True}">
+                            <field name="name" string="Task" required="1"/>
+                            <field name="status" widget="boolean_toggle"/>
+                            <field name="date"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Meeting Recording">
+                    <field name="meeting_recording" string="Meeting Recording">
+                        <tree editable="bottom">
+                            <field name="name" required="1"/>
+                            <field name="description"/>
+                            <field name="members" widget="many2many_tags"/>
+                            <field name="url"/>
+                            <field name="date"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_case_opportunities_filter_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.search.opportunity.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="priority">15</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <filter name="open_opportunities" position="after">
+                <filter name="not_overdue_opportunities" string="In need of action"
+                        domain="[('activity_date_deadline', '!=', False)]"></filter>
+            </filter>
+        </field>
+    </record>
+
+    <record id="crm_case_tree_view_oppor_inherit" model="ir.ui.view">
+        <field name="name">crm.case.tree.oppor.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="default_order">activity_date_deadline asc</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mail_scheduler_tree_view">
+            <field name="name">mail.scheduler.tree.view</field>
+            <field name="model">mail.mail</field>
+            <field name="arch" type="xml">
+                <tree string="Emails" decoration-muted="state in ('sent', 'cancel')" decoration-info="state=='outgoing'" decoration-danger="state=='exception'" create="false" delete="false">
+                    <field name="date"/>
+                    <field name="subject"/>
+                    <field name="author_id" string="User"/>
+                    <field name="message_id" invisible="1"/>
+                    <field name="recipient_ids" invisible="1"/>
+                    <field name="model" invisible="1"/>
+                    <field name="res_id" invisible="1"/>
+                    <field name="email_from" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <field name="message_type" invisible="1"/>
+                    <button name="send" string="Send Now" type="object" icon="fa-paper-plane text-success" states='outgoing'/>
+                    <button name="mark_outgoing" string="Retry" type="object" icon="fa-repeat text-success" states='exception,cancel'/>
+                    <button name="cancel" string="Cancel Email" type="object" icon="fa-times-circle text-danger" states='outgoing'/>
+                </tree>
+            </field>
+        </record>
+
+    <!-- Email Scheduler Menu -->
+    <record model="ir.actions.act_window" id="crm_all_email_scheduler">
+        <field name="name">Email Scheduler</field>
+        <field name="res_model">mail.mail</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="mail.view_mail_search"/>
+        <field name="view_id" ref="mail_scheduler_tree_view"/>
+        <field name="domain">[('create_uid', '=', uid), ('scheduled_date', '&gt;', datetime.datetime.now())]</field>
+    </record>
+
+    <menuitem id="crm_email_scheduler"
+            name="Email Scheduler"
+            action="crm_all_email_scheduler"
+            parent="crm.crm_menu_root"
+            groups="crm.group_use_lead"
+            sequence="5"/>
+
+</odoo>

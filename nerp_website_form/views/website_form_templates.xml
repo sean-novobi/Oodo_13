@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="nerp_contactus_form" name="Novobi Contact Form" inherit_id="website_form.contactus_form" customize_show="True">
+        <xpath expr="//form[1]" position="attributes">
+            <attribute name="class">s_website_form container-fluid mt32 custom-website-recaptchav3</attribute>
+        </xpath>
+    </template>
+</odoo>

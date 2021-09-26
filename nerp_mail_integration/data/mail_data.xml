@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Bounce Email Alias -->
+        <record id="nerp_mail_bounce_receiver_alias" model="ir.config_parameter">
+            <field name="key">nerp.mail.bounce.receiver.alias</field>
+            <field name="value">contact</field>
+        </record>
+
+        <!-- Mail gateway templates -->
+        <template id="nerp_mail_bounce_catchall_notofication">
+            <div>
+                <p>Hello,</p>
+                <p>The email sent from <t t-esc="message['email_from']"/> to <t t-esc="message['to']"/> cannot be processed.</p>
+                <p>Please check the details below and follow-up the mail thread.</p>
+                <p>Regards,</p>
+                <p>The <t t-esc="res_company.name"/> team.</p>
+            </div>
+            <hr/>
+        </template>
+
+    </data>
+</odoo>

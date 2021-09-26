@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="schedule_novobi_appointment" name="Website Appointment: Schedule Appointment">
+        <t t-call="website.layout">
+            <t t-set="title">Appointment</t>
+            <div id="wrap" class="oe_structure oe_empty"/>
+            <div id="personal_appointment_calendar">
+                <div id="employee_calendar" class="main-wrapper">
+                    <div class="content">
+<!--                        <t t-if="personal_meeting_path=='nerp.staging.novobi.com'">-->
+<!--                            <img src="./static/src/img/igm1.jpg" alt="Image 1" />-->
+<!--                        </t>-->
+                        <div id="wrap" class="o_website_calendar">
+                            <div class="oe_structure container mb128">
+                                <t t-if="employee_name">
+                                    <h1 class="o_page_header">Meeting with <t t-esc="employee_name"></t></h1>
+                                </t>
+                                <t t-elif="appointment_type.appointment_type_website_title">
+                                    <h1 class="o_page_header"><t t-esc="appointment_type.appointment_type_website_title"></t></h1>
+                                </t>
+                                <t t-else="">
+                                    <h1 class="o_page_header"><t t-esc="appointment_type.name"></t></h1>
+                                </t>
+                                <div class="mb8"></div>
+                                <div id="failed_message" class="alert alert-danger mt16 hidden c-alert-danger"
+                                     style="display: none;" role="alert">
+                                    <p>
+                                        <strong>Appointment failed!</strong>
+                                        <br/>
+                                        <p id="message">Something went wrong!</p>
+                                    </p>
+                                    <p>
+                                        Please, select another date.
+                                    </p>
+                                </div>
+                                <t t-if="message=='robot'">
+                                    <div id="robot_warning" class="alert alert-danger mt16 hidden c-alert-danger"
+                                         role="alert">
+                                        <p>
+                                            Verification expired. Please process the form again
+                                        </p>
+                                    </div>
+                                </t>
+                                <t t-if="not reschedule">
+                                    <div id="select_time_warning" class="alert alert-info mt16 hidden c-alert-danger"
+                                         role="alert">
+                                        <p>
+                                            Please select a Date &amp; Time
+                                        </p>
+                                    </div>
+                                    <div id="time_selected" style="display: none;">
+                                        <p class="h-highlight">
+                                            You selected
+                                            <span id="datetime-format">
+                                            </span>
+                                        </p>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div id="time_selected">
+                                        <p class="h-highlight">
+                                            You selected
+                                            <span id="datetime-format">
+                                                <t t-esc="start_datetime_str"></t>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </t>
+                                <div class="clearfix">
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <t t-call="nerp_appointment.novobi_calendar"/>
+                                    </div>
+                                    <div class="col-lg-6" id="customer_info">
+                                        <t t-call="nerp_appointment.novobi_appointment_customer_info_form"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="wrap" class="oe_structure oe_empty"/>
+        </t>
+    </template>
+
+    <template id="novobi_calendar" name="Website Appointment: Novobi Calendars">
+        <div t-foreach="slots" t-as="month" t-att-id="'calendar_' + str(month_index)" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <t t-if="month_index &gt; 0">
+                        <button class="col-lg-2 go-prev"
+                                t-att-data-prev-month-id="'calendar_' + str(month_index - 1)"
+                                t-att-data-month-index="str(month_index - 1)">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+                    </t>
+                    <t t-else="">
+                        <button class="col-lg-2 go-prev" disabled="true">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+                    </t>
+                    <h3 style="text-align: center;" class="col-lg-8">
+                        <t t-esc="month['month']"></t>
+                    </h3>
+                    <t t-if="month_index &lt; month_size - 1">
+                        <button class="col-lg-2 go-next"
+                                t-att-data-next-month-id="'calendar_' + str(month_index + 1)"
+                                t-att-data-month-index="str(month_index + 1)">
+                            <i class="fa fa-angle-right"></i>
+                        </button>
+                    </t>
+                    <t t-else="">
+                        <button class="col-lg-2 go-next" disabled="true">
+                            <i class="fa fa-angle-right"></i>
+                        </button>
+                    </t>
+                </div>
+                <table class="table s-table row">
+                    <tr class="active">
+                        <th class="text-center">Mon</th>
+                        <th class="text-center">Tue</th>
+                        <th class="text-center">Wed</th>
+                        <th class="text-center">Thu</th>
+                        <th class="text-center">Fri</th>
+                        <th class="text-center">Sat</th>
+                        <th class="text-center">Sun</th>
+                    </tr>
+                    <tr t-foreach="month['weeks']" t-as="weeks" class="o_calendar_days">
+                        <t t-foreach="weeks" t-as="day">
+                            <td t-attf-class="text-center#{day['slots'] and ' o_day dropdown' or ''} #{day['weekend_cls']} #{day['today_cls']}"
+                                t-attf-title="#{day['today_cls'] and 'Today' or ''}">
+                                <t t-if="day['slots']">
+                                    <div class="dropdown-toggle o_slots_dropdown" data-toggle="dropdown"
+                                         aria-haspopup="true" aria-expanded="false">
+                                        <strong>
+                                            <span t-esc="day['day'].day"/>
+                                        </strong>
+                                    </div>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-foreach="day['slots']" t-as="slot">
+                                            <t t-if="slot and not reschedule">
+                                                <a role="menuitem" class="dropdown-item new"
+                                                   t-att-data-slot-datetime="slot['datetime']"
+                                                   t-att-data-employee-id="slot['employee_id']"
+                                                   t-att-data-duration="duration"
+                                                   t-esc="slot['hours']"
+                                                   data-toggle="modal"
+                                                   data-target="#booking-confirmation"/>
+                                            </t>
+                                            <t t-if="slot and reschedule">
+                                                <a role="menuitem" class="dropdown-item reschedule"
+                                                   t-att-data-slot-datetime="slot['datetime']"
+                                                   t-att-data-employee-id="slot['employee_id']"
+                                                   t-att-data-access-token="access_token"
+                                                   t-att-data-duration="duration"
+                                                   t-esc="slot['hours']"
+                                                   data-toggle="modal"
+                                                   data-target="#booking-confirmation"/>
+                                            </t>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="not day['slots']">
+                                    <div t-esc="day['day'].day" t-att-class="day['mute_cls']"/>
+                                </t>
+                            </td>
+                        </t>
+                    </tr>
+                    <!--to fix bootstrap md height add empty tr so now each month has 6 weeks row -->
+                    <tr t-if="len(month['weeks']) == 5" class="o_calendar_days"/>
+                </table>
+            </div>
+            <p id="timezone" t-att-data-timezone="timezone">
+                Time displayed in
+                <strong t-esc="timezone"/>
+                timezone
+            </p>
+        </div>
+        <div class="modal fade custom-modal" data-keyboard="false" data-backdrop="static"
+             id="booking-confirmation" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Confirmation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="m-body">
+                            <div class="m-item m-t">You've selected the following time:</div>
+                            <div class="m-item m-date-t" id="datetime-locale"></div>
+                            <div class="m-item m-cf-t">Do you want to proceed with this time?</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn custom-btn custom-btn-primary personal-continue-booking"
+                                id="personal-continue-booking">
+                            Yes
+                        </button>
+                        <button type="button" class="btn custom-btn custom-btn-default" data-dismiss="modal"
+                                id="personal-choose-new-time">
+                            Choose new time
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

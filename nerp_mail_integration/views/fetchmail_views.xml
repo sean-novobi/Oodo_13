@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_email_server_form" model="ir.ui.view">
+        <field name="model">fetchmail.server</field>
+        <field name="inherit_id" ref="fetchmail.view_email_server_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date']" position="after">
+                <field name="fetch_spam_mailbox" attrs="{'invisible': [('server_type', '!=', 'imap')]}"/>
+            </xpath>
+            <field name="is_ssl" position="after">
+                <field name="email_status_restore" string="Email Status Restore" />
+                <label for="alias_name" string="Email Alias"/>
+                <div  name="edit_alias" style="display: inline;" >
+                    <field name="alias_name" class="oe_inline" required="1"/>@<field name="alias_domain" class="oe_inline" readonly="1"/>
+                </div>
+                <field name="email_label" string="Email Label" />
+            </field>
+        </field>
+    </record>
+</odoo>
+
+

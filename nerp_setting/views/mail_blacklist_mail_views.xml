@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mail_blacklist_mail_tree" model="ir.ui.view">
+        <field name="model">mail.blacklist.mail</field>
+        <field name="arch" type="xml">
+            <tree string="Mail Blacklist Mail">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="model_ids" widget="many2many_tags"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_model_mail_blacklist_mail" model="ir.actions.act_window">
+        <field name="name">Mail Blacklist Mail</field>
+        <field name="res_model">mail.blacklist.mail</field>
+        <field name="context">{}</field>
+        <field name="view_id" ref="view_mail_blacklist_mail_tree"/>
+    </record>
+
+
+    <record id="view_mail_blacklist_mail_form" model="ir.ui.view">
+        <field name="name">mail.blacklist.mail.form</field>
+        <field name="model">mail.blacklist.mail</field>
+        <field name="arch" type="xml">
+            <form string="Mail Blacklist Mail">
+                <sheet>
+                    <group>
+                        <group string="Description">
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                        <group string="Apply On">
+                            <field name="model_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mail_blacklist_mail_search" model="ir.ui.view">
+        <field name="name">mail.blacklist.mail.search</field>
+        <field name="model">mail.blacklist.mail</field>
+        <field name="arch" type="xml">
+            <search string="Search Mail Blacklist Mail">
+                <field name="name" string="Name"/>
+                <field name="email" string="Blacklist Mail"/>
+                <field name="model_ids" string="Apply on Models"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <menuitem parent="base.menu_email" id="action_mail_blacklist_mail_tree" action="action_model_mail_blacklist_mail" name="Mail Blacklist Mail" sequence="15" groups="base.group_no_one"/>
+
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="website_layout" inherit_id="website.layout">
+        <xpath expr="//t[@t-call='web.brand_promotion']/.." position="replace">
+        </xpath>
+    </template>
+    <template id="extend_appointment_validated" inherit_id="website_calendar.appointment_validated">
+        <xpath expr="//div[@id='wrap']" position="attributes">
+            <attribute name="name">novobi_view</attribute>
+            <attribute name="t-att-data-event-state">event.novobi_state</attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='website.layout']" position="attributes">
+            <attribute name="t-call">#{layout}</attribute>
+        </xpath>
+        <xpath expr="(//a[@role='button'])[last()]" position="attributes">
+            <attribute name="style">display:none;</attribute>
+        </xpath>
+        <xpath expr="(//a[@role='button'])[last()]" position="after">
+            <t t-if="flag == 'accounting_appointment'">
+                <a role="button" class="btn btn-primary btn-block"
+                   t-attf-href="/products/odoo-accounting/appointment/calendar?access_token=#{event.access_token}&amp;reschedule=True">
+                    <i class="fa fa-fw fa-refresh"></i>Reschedule
+                </a>
+                <a role="button" class="btn btn-danger btn-block"
+                   t-attf-href="/products/odoo-accounting/appointment/cancel?access_token=#{event.access_token}">
+                    <i class="fa fa-fw fa-times"></i>Cancel
+                </a>
+            </t>
+            <t t-if="flag == 'novobi_appointment'">
+                <a role="button" class="btn btn-primary btn-block"
+                   t-attf-href="/services/appointment/calendar?access_token=#{event.access_token}&amp;reschedule=True">
+                    <i class="fa fa-fw fa-refresh"></i>Reschedule
+                </a>
+                <a role="button" class="btn btn-danger btn-block"
+                   t-attf-href="/services/appointment/cancel?access_token=#{event.access_token}">
+                    <i class="fa fa-fw fa-times"></i>Cancel
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="extend_appointment" inherit_id="website_calendar.appointment">
+        <xpath expr="//t[@t-call='website.layout']" position="attributes">
+            <attribute name="t-call">#{layout}</attribute>
+        </xpath>
+        <xpath expr="//ul[1]" position="attributes">
+            <attribute name="style">display:none;</attribute>
+        </xpath>
+    </template>
+
+    <template id="extend_appointment_calendar" inherit_id="website_calendar.appointment_calendar">
+        <xpath expr="//div[1]" position="attributes">
+            <attribute name="id">novobi_calendar</attribute>
+            <t t-call-assets="nerp_appointment.assets_frontend" t-css="false"/>
+        </xpath>
+        <xpath expr="//a[@role='menuitem']" position="attributes">
+            <attribute name="t-if">
+                slot and not reschedule
+            </attribute>
+            <attribute name="class">
+                dropdown-item new
+            </attribute>
+            <attribute name="t-attf-href"></attribute>
+            <attribute name="t-att-data-slot-datetime">slot['datetime']</attribute>
+            <attribute name="t-att-data-employee-id">slot['employee_id']</attribute>
+            <attribute name="t-att-data-access-token">access_token</attribute>
+            <attribute name="t-att-data-flag">flag</attribute>
+        </xpath>
+        <xpath expr="//a[@role='menuitem']" position="after">
+            <a t-else='' role="menuitem" class="dropdown-item reschedule"
+               t-attf-href="/reschedule/#{event.access_token}?date_time=#{slot['datetime']}"
+               t-esc="slot['hours']"/>
+        </xpath>
+    </template>
+</odoo>

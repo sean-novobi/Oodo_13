@@ -1,0 +1,46 @@
+/*This file is a customized version of the mdb.min.css lib to avoid css confliction*/
+
+.md-form {
+    position: relative;
+}
+
+.md-form input:not([type]), .md-form input[type=date]:not(.browser-default), .md-form input[type=datetime-local]:not(.browser-default), .md-form input[type=datetime]:not(.browser-default), .md-form input[type=email]:not(.browser-default), .md-form input[type=number]:not(.browser-default), .md-form input[type=password]:not(.browser-default), .md-form input[type=search-md], .md-form input[type=search]:not(.browser-default), .md-form input[type=tel]:not(.browser-default), .md-form input[type=text]:not(.browser-default), .md-form input[type=time]:not(.browser-default), .md-form input[type=url]:not(.browser-default), .md-form textarea.md-textarea {
+    box-sizing: content-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.md-form .form-control {
+    margin: 0 0 .5rem;
+    padding: .6rem 0 .4rem;
+    height: auto;
+}
+
+.md-form label.active {
+    -webkit-transform: translateY(-14px) scale(.8);
+    transform: translateY(-14px) scale(.8);
+}
+
+.md-form label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    transition: transform .2s ease-out,color .2s ease-out;
+    transition: transform .2s ease-out,color .2s ease-out,-webkit-transform .2s ease-out;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+    cursor: text;
+    color: #757575;
+}
+
+.md-form label, .md-form.md-outline label {
+    transition: color .2s ease-out,-webkit-transform .2s ease-out;
+}

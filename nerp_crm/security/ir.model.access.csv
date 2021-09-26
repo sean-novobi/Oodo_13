@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_compliance_type_public,compliance_type_public,nerp_crm.model_compliance_type,,1,0,0,0
+access_industry_type_public,industry_type_public,nerp_crm.model_industry_type,,1,0,0,0
+access_interest_type_public,interest_type_public,nerp_crm.model_interest_type,,1,0,0,0
+access_odoo_level_public,odoo_level_public,nerp_crm.model_odoo_level,,1,0,0,0
+access_opportunity_task_tag_public,opportunity_task_tag_public,nerp_crm.model_opportunity_task_tag,,1,0,0,0
+access_opportunity_task_public,opportunity_task_public,nerp_crm.model_opportunity_task,,1,0,0,0
+access_meeting_recording_public,meeting_recording_public,nerp_crm.model_meeting_recording,,1,0,0,0
+access_compliance_type_user,compliance_type_user,nerp_crm.model_compliance_type,base.group_user,1,1,1,1
+access_industry_type_user,industry_type_user,nerp_crm.model_industry_type,base.group_user,1,1,1,1
+access_interest_type_user,interest_type_user,nerp_crm.model_interest_type,base.group_user,1,1,1,1
+access_odoo_level_user,odoo_level_user,nerp_crm.model_odoo_level,base.group_user,1,1,1,1
+access_opportunity_task_tag_user,opportunity_task_tag_user,nerp_crm.model_opportunity_task_tag,base.group_user,1,1,1,1
+access_opportunity_task_user,opportunity_task_user,nerp_crm.model_opportunity_task,base.group_user,1,1,1,1
+access_meeting_recording_user,meeting_recording_user,nerp_crm.model_meeting_recording,base.group_user,1,1,1,1

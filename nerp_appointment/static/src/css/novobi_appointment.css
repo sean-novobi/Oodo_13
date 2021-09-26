@@ -1,0 +1,563 @@
+/* page: demo 1 + demo 2 */
+html {
+    font-size: 14px;
+}
+
+.o-website-common .o-website-container {
+    font-family: 'SF UI Display Regular';
+    max-width: 75%;
+    padding: 25px;
+}
+
+.o-website-common .o-website-container .header {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.65px;
+}
+
+.o-website-common .o-website-container .logo-bg {
+    width: 100%;
+}
+
+.o-website-common .o-website-container .d-logo {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: 0.32px;
+    color: #242424;
+    margin: 10px 0px;
+}
+
+.odoo-accounting-book-form {
+    padding: 0px 15px;
+}
+
+.odoo-accounting-book-form .i-panel {
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    padding: 12px 30px;
+    margin: 5px 0px;
+}
+
+.md-form .form-control {
+    font-size: 14px;
+    color: #565d61;
+}
+
+.md-form label {
+    font-size: 14px !important;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #565d61 !important;
+}
+
+.o-panel {
+    padding: 20px 0px;
+}
+
+.o-panel .o-header {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.41px;
+    color: #242424;
+}
+
+.t-header {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    color: #242424;
+}
+
+.custom-control.custom-checkbox {
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    padding: 14px 40px;
+    margin: 10px 0px;
+}
+
+.custom-control.custom-checkbox .custom-control-label {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: normal;
+    color: #242424;
+    padding-left: 10px;
+}
+
+.custom-control.custom-checkbox .custom-control-input:not(:checked):not(:indeterminate) ~ .custom-control-label:before {
+    border-radius: 2px;
+    border: #01010187 solid 1px;
+    outline: none !important;
+
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #007bff;
+    background-color: #007bff;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #007bff;
+}
+
+
+.d-checkbox {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    color: #242424;
+    margin: 20px 0px;
+}
+
+.d-checkbox a {
+    color: #005fa4;
+}
+
+textarea.form-control::placeholder {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    color: #242424;
+    opacity: 0.5;
+}
+
+textarea.form-control {
+    border-radius: 8px;
+    border: solid 1px #979797;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.odoo-accounting-submit, .odoo-schedule-t{
+    border-radius: 8px !important;
+    background-color: #0d73ba !important;
+    margin: 0 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--white) !important;
+}
+
+.add-guests {
+    border-radius: 8px !important;
+    background-color: #0d73ba !important;
+    margin: 10px 0px !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--white) !important;
+}
+
+.d-checkbox {
+}
+
+.o_website_calendar {
+    font-family: 'SF UI Display Regular';
+}
+
+/* page: demo 3*/
+.o_website_calendar .o_page_header {
+    font-family: 'SF UI Display Bold';
+    border-bottom: none !important;
+    margin-top: 0 !important;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.65px;
+    text-align: center;
+}
+
+.o_website_calendar h3 {
+    font-family: 'SF UI Display Medium';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.49px;
+    color: #2c3135;
+}
+
+table.s-table.table th {
+    font-size: 17.5px;
+    line-height: 0.83;
+    text-align: center;
+    color: #7f8fa4;
+    padding-top: 1.1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+table.s-table.table td,
+table.s-table.table th {
+    padding: 4px 2px;
+}
+
+.o_calendar_days .o_mute_day {
+    opacity: 0.5;
+    background: #edf2f5;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-radius: 3px;
+}
+
+.o_calendar_days td div {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    min-width: 75px;
+}
+
+.o_calendar_days td div.dropdown-backdrop {
+    padding: 0px;
+}
+
+.o_calendar_days td div.dropdown-backdrop {
+    padding: 0px;
+}
+
+.o_calendar_days .dropdown .dropdown-menu .dropdown-item:active,
+.o_calendar_days .dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+    .o-website-common .o-website-container-s {
+        padding: 0px;
+    }
+
+    .o-website-common .o-website-container {
+        padding: 0px;
+        max-width: 85%;
+    }
+
+    .b-schedule button, .p-wrapper {
+        width: 257px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .o_calendar_days td div {
+        min-width: 40px;
+    }
+
+    .o-website-common .o-website-container-s {
+        padding: 0px;
+    }
+
+    .b-schedule button, .p-wrapper {
+        width: 315px !important;
+    }
+
+    .v-hr {
+        border-left: none !important;
+    }
+}
+@media (max-width: 500px) {
+    .o-website-common .o-website-container {
+        max-width: 90%;
+    }
+    div.novobi-banner {
+        width: inherit!important;
+        height: inherit!important;
+        margin: 15px;
+    }
+}
+
+.o_calendar_days .o_weekend {
+    background-color: inherit !important;
+
+}
+
+.o_calendar_days .o_today::after {
+    bottom: 4px !important;
+}
+
+.o_calendar_days .o_day .o_slots_dropdown {
+    padding: inherit !important;
+    background-color: #0d73ba;
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.o_calendar_days .o_day {
+    background-color: inherit !important;
+    padding: 3px !important;
+}
+
+.o_calendar_days {
+    height: inherit !important;
+}
+
+.h-highlight {
+    border-radius: 8px;
+    background-color: #d4edda !important;
+    padding: 11px 20px;
+    letter-spacing: 0.32px;
+    color: #155724 !important;
+    margin: 15px 0px;
+    font-size: 14px;
+    border-color: #c3e6cb;
+    text-align: center;
+}
+
+.h-highlight span {
+    font-weight: 600;
+}
+
+.d-header {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: 0.32px;
+    color: #242424;
+}
+
+.d-header a {
+    color: #005fa4;
+}
+
+.t-schedule {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.57;
+    letter-spacing: 0.32px;
+    color: #242424;
+}
+
+.c-schedule {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.57;
+    letter-spacing: 0.32px;
+    color: #242424;
+}
+
+.c-schedule li {
+    list-style: none;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: 0.32px;
+    color: #242424;
+    margin-bottom: 0;
+}
+
+.b-schedule {
+    margin: 8px 0px;
+    float: right;
+    clear: both;
+}
+
+.b-schedule:first-child {
+    margin-top: 25px;
+}
+
+.b-schedule a.btn {
+    text-transform: inherit;
+    width: 325px;
+    height: 50px;
+    box-shadow: none !important;
+    word-wrap: break-word;
+    white-space: normal;
+    cursor: pointer;
+    border: 0;
+    border-radius: .125rem;
+    padding: 1rem 2.14rem;
+    text-transform: inherit;
+    text-decoration: none;
+}
+
+.b-schedule a.btn.cancel {
+    border-radius: 8px;
+    border: solid 1px #979797;
+    background-color: inherit !important;
+    color: #242424 !important;
+    font-weight: normal !important;
+}
+
+.b-schedule a.btn.n-border {
+    border: none !important;
+    text-decoration: underline;
+}
+
+.b-schedule a {
+    font-size: 14px;
+    color: #242424;
+    text-decoration: underline;
+}
+
+.p-wrapper {
+    text-align: center;
+    width: 338px;
+    height: 50px;
+}
+
+.v-hr {
+    border-left: solid 1px #97979742;
+}
+
+.l-picker .bootstrap-select button:after {
+    display: inline-block;
+}
+
+div.dropdown.bootstrap-select.fit-width.dropup.show {
+    display: inline-block !important;
+}
+
+.md-form > input[type=time]:not(.browser-default) + label, .md-form > input[type]:-webkit-autofill:not(.browser-default):not([type=search]) + label {
+    transform: translateY(-14px) scale(.8);
+}
+
+.c-alert-danger p {
+    margin: 0;
+}
+
+.c-alert-danger p#message {
+    margin: 10px 0px 5px 0px;
+}
+
+div.c-schedule p.appointment-topics {
+    line-height: 25px;
+    margin-left: 15px;
+}
+div.novobi-banner {
+    font-family: Roboto;
+    text-align: center;
+    margin:10px auto;
+}
+div.a-banner{
+    font-size: 24px;
+    font-weight: bold;
+    margin: auto;
+}
+div.b-banner, div.c-banner{
+    font-size: 16px;
+    width: 100%;
+}
+div.novobi-form{
+    margin: auto;
+}
+
+p#timezone strong{
+    font-weight: bold;
+}
+/*Modal css in calendar page*/
+
+.custom-modal .modal-dialog {
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: calc(100% - (2.5rem * 2));
+}
+
+.custom-modal .modal-header {
+    margin: 0px 25px;
+    padding: 1rem 0rem;
+}
+
+.custom-modal .modal-header .modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #242424;
+}
+
+.custom-modal .m-body {
+    margin: 8px;
+}
+
+.custom-modal .m-body .m-item {
+    margin: 15px 0px;
+}
+
+.custom-modal .m-body .m-t {
+    font-size: 16px;
+    color: #242424;
+}
+
+.custom-modal .m-body .m-date-t {
+    font-size: 16px;
+    color: #0d73ba;
+    background-color: #4285f433;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+    max-width: fit-content;
+}
+
+.custom-modal .m-body .m-cf-t {
+    font-size: 16px;
+    font-weight: 500;
+    color: #242424;
+}
+
+.custom-modal .custom-btn {
+    padding: 11px 30px;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.custom-modal .custom-btn-primary {
+    background-color: #0d73ba;
+    color: #fff;
+}
+
+.custom-modal .custom-btn-primary:hover {
+    color: #fff;
+}
+
+.custom-modal .custom-btn-default {
+    background-color: #fff;
+    color: #0d73ba;
+    border: solid 1px #0d73ba;
+}
+
+.custom-modal .modal-body {
+    padding: 0rem 1rem;
+}
+
+.custom-modal .modal-footer {
+    border: none;
+    justify-content: left;
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+#booking-confirmation {
+    font-family: 'SF UI Display Regular';
+}
+
+button.go-prev[disabled]{
+    opacity: 0.3;
+}
+button.go-next[disabled]{
+    opacity: 0.3;
+}

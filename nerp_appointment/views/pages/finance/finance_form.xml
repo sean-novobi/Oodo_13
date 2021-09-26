@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="finance_appointment_form" name="Accounting Appointment Form">
+        <t t-call="website.layout">
+            <link rel="stylesheet" type="text/css"
+                  href="/nerp_appointment/static/src/css/finance_service.css"/>
+            <!--            <link rel="stylesheet" type="text/css" href="/nerp_appointment/static/src/css/custom_mdb.css"/>-->
+            <!--            <t t-call-assets="nerp_appointment.nerp_assets_frontend" t-js="false"/>-->
+            <!--            <t t-call-assets="nerp_appointment.nerp_assets_frontend" t-css="false"/>-->
+            <div id="wrap" class="oe_structure">
+                <section class="s_text_image pt32 pb4" data-name="Image - Text" style="">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 pt16 pb16">
+                                <img src="/web/image/2118/3CC3F349-C031-4BB3-9BE4-68CB186891C4.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Image and Text" data-original-title=""
+                                     title="" aria-describedby="tooltip290633"/>
+                            </div>
+                            <div class="col-lg-6 pb16 pt16">
+                                <h2>Support at every step of the way!</h2>
+                                <p>In addition to Odoo Accounting’s full-stack finance solution, we want to set you and
+                                    your organization up for success! Our comprehensive support maximizes your team’s
+                                    ability to be productive, efficient, and comfortable on the platform with tailored
+                                    assistance when and where you need it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_three_columns_circle" data-name="3 Columns" style="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="mt32 mb16 padding-l-r-32 offset-lg-1 col-lg-3">
+                                <div class="s_btn text-center pt16 pb16" data-name="Button">
+                                    <a href="#accounting" class="btn btn-gamma rounded-circle" data-original-title=""
+                                       title="" aria-describedby="tooltip62175">Accounting Services
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mt32 mb16 padding-l-r-32 col-lg-3">
+                                <div class="s_btn text-center pt16 pb16" data-name="Button">
+                                    <a href="#payroll" class="btn btn-gamma rounded-circle" data-original-title=""
+                                       title="" aria-describedby="tooltip467111">Payroll Services
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mt32 mb16 padding-l-r-32 col-lg-3">
+                                <div class="s_btn text-center pt16 pb16" data-name="Button">
+                                    <a href="#book_services" class="btn btn-epsilon rounded-circle" data-original-title=""
+                                       title="" aria-describedby="tooltip319599">Book Services
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pt32 pb0" data-name="Title" id="accounting" data-anchor="true">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt16 pb16" style="text-align: center;">
+                                <div class="s_hr text-left pt32 pb32" data-name="Separator">
+                                    <hr class="s_hr_2px s_hr_dotted w-100 mx-auto border-gamma"
+                                        style="text-align: left;"/>
+                                </div>
+                                <h2 class="s_title_default">Accounting Services</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pb32 pt0" data-name="Text - Image">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="pt16 pb16 col-lg-7">
+                                <h2>Odoo Accounting Implementation</h2>
+                                <p>Get off to a strong start with full Odoo Accounting implementation support. As an
+                                    Odoo Gold Partner, we can deliver a comprehensive, fully integrated, turn-key Odoo
+                                    solution that brings strong functionality to your unique business needs. Leveraging
+                                    an Agile methodology, we make demonstrable progress on a weekly basis to ensure your
+                                    implementation stays within scope.
+                                </p>
+                                <p class="o_default_snippet_text">We are experts in Odoo and U.S. accounting and are
+                                    able to work either onsite or remotely to get your platform up and running and set
+                                    your team up to be successful.
+                                </p>
+                            </div>
+                            <div class="pt16 pb16 col-lg-5">
+                                <img src="/web/image/2110/6CF202E3-67EC-4B2D-9E5F-904931956F88.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Text and Image" data-original-title=""
+                                     title="" aria-describedby="tooltip646821"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pt32 pb32 bg-epsilon" data-name="Image - Text">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="pt16 pb16 col-lg-4">
+                                <img src="/web/image/2111/D1B93D8D-1020-48AF-B6A9-E8514602E1F2.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Image and Text" data-original-title=""
+                                     title="" aria-describedby="tooltip835497"/>
+                            </div>
+                            <div class="pt16 pb16 col-lg-8">
+                                <h2>Odoo Accounting Training</h2>
+                                <p>Get off to a strong start with full Odoo Accounting implementation support. As an
+                                    Odoo Gold Partner, we can deliver a comprehensive, fully integrated, turn-key Odoo
+                                    solution that brings strong functionality to your unique business needs. Leveraging
+                                    an Agile methodology, we make demonstrable progress on a weekly basis to ensure your
+                                    implementation stays within scope.
+                                </p>
+                                <p>We are experts in Odoo and U.S. accounting and are able to work either onsite or
+                                    remotely to get your platform up and running and set your team up to be successful.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pt32 pb32" data-name="Text - Image" style="">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 pt16 pb16">
+                                <h2>Accounting Migration &amp;amp; Integration</h2>
+                                <p>Let our experts handle your move to Odoo! Streamline your transition with migration
+                                    support for historical data and finance workflows from Quickbooks, Xero, or any
+                                    legacy ERP into Odoo.
+                                </p>
+                                <p>While Odoo Accounting is able to handle all of your finance needs in one place, we
+                                    understand if you need to integrate with other systems. We can ensure that Odoo
+                                    Accounting seamlessly integrates with any other system your business requires so you
+                                    can be as efficient as possible.
+                                </p>
+                            </div>
+                            <div class="col-lg-6 pt16 pb16">
+                                <img src="/web/image/2112/55094E54-295C-4D7C-AE59-1DC34B91CEDA.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Text and Image"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pt32 pb32 bg-delta" data-name="Image - Text" style="">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="pt16 pb16 col-lg-3">
+                                <img src="/web/image/2113/51CC027E-7BB5-4FC5-A1AB-E368ADE2D9CE.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Image and Text" data-original-title=""
+                                     title="" aria-describedby="tooltip251837"/>
+                            </div>
+                            <div class="pt16 pb16 col-lg-9">
+                                <h2>Support &amp;amp; Professional Services</h2>
+                                <p class="o_default_snippet_text">If you’re an existing Odoo user, we can assess your
+                                    Odoo Accounting implementation for data integrity and best practices in integration.
+                                </p>
+                                <p>Depending on your needs we can also provide weekly or monthly ongoing reviews to make
+                                    sure everything is running and properly integrated.
+                                </p>
+                                <p class="o_default_snippet_text">Professional services ensure that you finance team is
+                                    maximizing their ability to use Odoo Accounting efficiently. Our CPA and bookkeeping
+                                    consultation sets your team up to be as successful as possible using Odoo
+                                    Accounting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pt32 pb32 bg-gamma" data-name="Text - Image" style="">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="pt16 pb16 col-lg-10">
+                                <h2>
+                                    <font style="color: rgb(255, 255, 255);">Financial Analytics</font>
+                                </h2>
+                                <p>
+                                    <font style="color: rgb(255, 255, 255);">Comprehensive analytics help you make sense
+                                        of historical data and lay a foundation for future success. We gather and
+                                        interpret your financial data to create a roadmap for your success with
+                                        financial analytics support.
+                                    </font>
+                                </p>
+                                <p>
+                                    <font style="color: rgb(255, 255, 255);">Forecast your sales and cash flow. Optimize
+                                        your business workflows and automations. Stay on top of changes with dashboards,
+                                        reports, KPI alerts, and more. We can help you unlock the power of your own data
+                                        to grow and streamline your business.
+                                    </font>
+                                </p>
+                            </div>
+                            <div class="pt16 pb16 col-lg-2">
+                                <img src="/web/image/2115/C94A1548-18E2-404B-BC54-67441203773D.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Text and Image"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pt32 pb0" data-name="Title" id="payroll" data-anchor="true">
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt16 pb0" style="text-align: center;">
+                                <h2 class="s_title_default">Payroll Services</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pb32 pt0" data-name="Text - Image">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="pt16 pb16 col-lg-9">
+                                <h2>Compliance Setup and Monitoring</h2>
+                                <p>Rest assured that your payroll implementation meets ongoing compliance standards with
+                                    all federal and local jurisdictions including PTO, FMLA, Filing Status, reciprocity
+                                    and more. If there are any changes or updates to regulations at any level of tax
+                                    jurisdiction, we will work with your HR team to properly implement and report those
+                                    changes.
+                                    <br/>
+                                </p>
+                            </div>
+                            <div class="pt16 pb16 col-lg-3">
+                                <img src="/web/image/2114/7E897BBF-CE14-4272-B66C-D73CB80B170B.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Text and Image" data-original-title=""
+                                     title="" aria-describedby="tooltip919561"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pt32 pb32 bg-gamma" data-name="Image - Text" style="">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="pt16 pb16 col-lg-3">
+                                <img src="/web/image/2116/46D56956-1A28-46DA-9716-6EB5669D5EDC.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Image and Text" data-original-title=""
+                                     title="" aria-describedby="tooltip988468"/>
+                            </div>
+                            <div class="pt16 pb16 col-lg-9">
+                                <h2>Payroll and Tax Fillings</h2>
+                                <p>While Odoo Payroll makes it easy for you to calculate and manage your payroll taxes,
+                                    we provide additional support for filing. Avoid manual tax filing processes. We can
+                                    assist in processing tax forms such as W2s, W3s, 1099s, and 1096s for your employees
+                                    and to your required tax jurisdiction. In addition, we can provide assistance in
+                                    filing the necessary tax reports, ACA filings, and form 1095/1094 filings to federal
+                                    and local jurisdictions. Options include standard filing or e-filing.
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image pt32 pb32" data-name="Text - Image">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="pt16 pb16 col-lg-9">
+                                <h2>HR and Payroll Management</h2>
+                                <p class="o_default_snippet_text">Get the help you need to set up and maintain your HR
+                                    practices with on-demand HR and Payroll support and consulting. We can assist in
+                                    every aspect of your HR needs including:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p>Employee policies and handbooks</p>
+                                    </li>
+                                    <li>
+                                        <p>Employee self-service on boarding documents such as I-9, W4, and direct
+                                            deposit
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Connecting to your health insurance partners, your retirement benefits
+                                            partners, and/or HSA partners
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt16 pb16 col-lg-3">
+                                <img src="/web/image/2117/4DADE9DD-990F-4930-B8BC-ACED42905EC2.png"
+                                     class="img img-fluid mx-auto" alt="Odoo • Text and Image"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div id="wrap" class="oe_structure oe_empty"/>
+                <div class="main-content" id="book_services" data-anchor="true">
+                    <div class="section booking-section">
+                        <div id="wrap" class="o-section-common">
+                            <div class="o-section-container">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-sx-12">
+                                        <h4 class="header">Get on Track with Support Services from Odoo Accounting</h4>
+                                        <img alt="odoo-accounting-bg" class="logo-bg"
+                                             src="/nerp_appointment/static/src/img/odoo_accounting_bg.png"/>
+                                        <p class="d-logo">We want to set your business up for success! With services and
+                                            support from our Odoo Accounting experts, we can ensure that you are able to
+                                            utilize our financial tools to the fullest extent. Book time to talk with
+                                            one of
+                                            our experts to answer your questions, walk you through workflows, initialize
+                                            your data, and more! We are here to help.
+                                            <t t-if="employee is None">
+                                                <br/>
+                                                <br/>
+                                                Training and support services come with a 100% money back guarantee if
+                                                you’re not satisfied.
+                                            </t>
+                                        </p>
+                                        <div class="section-blocks">
+                                            <t t-foreach="packages" t-as="package">
+                                                <div class="s-item">
+                                                    <div class="s-item-t">
+                                                        <div class="s-item-text s-item-thead">
+                                                            <t t-esc="package['name']"></t>
+                                                        </div>
+                                                        <div class="s-item-text s-item-tbody">
+                                                            <t t-if="package['quantity'] > 1">
+                                                                <t t-esc="package['quantity']"></t>
+                                                                Hours
+                                                            </t>
+                                                            <t t-else="">
+                                                                <t t-esc="package['quantity']"></t>
+                                                                Hour
+                                                            </t>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s-item-b">
+                                                        <div class="s-item-wrapper">
+                                                            <div class="s-item-text s-item-thead">
+                                                                $
+                                                                <t t-esc="package['price']"></t>
+                                                            </div>
+                                                            <div class="s-item-text s-item-tbody">
+                                                                <t t-esc="package['discount_tag']"></t>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-sx-12">
+                                        <t t-call="nerp_appointment.finance_appointment_customer_info_form"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="wrap" class="oe_structure oe_empty"/>
+                <section class="s_call_to_action pt48 pb24 bg-epsilon bg_gradient_black_up" data-name="Call to Action">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 pb24">
+                                <h3><span style="font-weight: bolder;">Contact us today</span>&amp;nbsp;
+                                    <font class="text-gamma">for a demo</font>
+                                </h3>
+                                <h3/>
+                                <p class="lead" style="font-family: &quot;SF UI Display Regular&quot;;">And see for
+                                    yourself the power of Odoo Accounting from Novobi
+                                </p>
+                            </div>
+                            <div class="col-lg-3 s_btn text-right pt8 pb24" data-name="Button">
+                                <a href="/contactus" class="btn btn-gamma btn-lg">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

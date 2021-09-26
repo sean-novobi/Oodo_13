@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="service_packages_view_tree" model="ir.ui.view">
+            <field name="name">service.packages.tree</field>
+            <field name="model">service.packages</field>
+            <field name="arch" type="xml">
+                <tree string="Service Packages">
+                    <field name="name"/>
+                    <field name="package_type"/>
+                    <field name="quantity"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="service_packages_view_form" model="ir.ui.view">
+            <field name="name">service.packages.form</field>
+            <field name="model">service.packages</field>
+            <field name="arch" type="xml">
+                <form string="Service Packages">
+                    <sheet>
+                            <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Package Name"/>
+                            <h1><field name="name" placeholder="Package Name"/></h1>
+                        </div>
+                        <group>
+                            <group string="Internal Notes">
+                                <field name="package_type"/>
+                                <field name="product_template_id"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="quantity"/>
+                                <field name="price"/>
+                                <field name="discount_tag"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="service_packages_action" model="ir.actions.act_window">
+            <field name="name">Service Packages</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">service.packages</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new service package
+                </p><p>
+                    Those service packages will be showed on your website.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_service_packages_config"
+            name="Service Packages"
+            parent="nerp_appointment.menu_appointment_config"
+            action="nerp_appointment.service_packages_action"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <!--        TODO: change to noupdate when deploy to UAT-->
+        <record id="checkbox_answer_1" model="calendar.appointment.answer">
+            <field name="name">Odoo Accounting Configuration</field>
+        </record>
+
+        <record id="checkbox_answer_2" model="calendar.appointment.answer">
+            <field name="name">Odoo Accounting Support/Training</field>
+        </record>
+
+        <record id="checkbox_answer_3" model="calendar.appointment.answer">
+            <field name="name">HR/Payroll Compliance/ Set up</field>
+        </record>
+
+        <record id="checkbox_answer_4" model="calendar.appointment.answer">
+            <field name="name">Odoo Payroll Support/Training</field>
+        </record>
+
+        <record id="accounting_appointment_text_question" model="calendar.appointment.question">
+            <field name="name">Other topics</field>
+            <field name="question_type">text</field>
+            <field name="placeholder">Anything you’d like to add to help us customize your experience?</field>
+        </record>
+
+        <record id="accounting_checkbox_question" model="calendar.appointment.question">
+            <field name="name">Selected topic</field>
+            <field name="question_type">checkbox</field>
+            <field name="answer_ids" eval="[
+            (4, ref('checkbox_answer_1')),
+            (4, ref('checkbox_answer_2')),
+            (4, ref('checkbox_answer_3')),
+            (4, ref('checkbox_answer_4'))
+            ]"/>
+        </record>
+
+        <record id="alarm_mail_novobi_appointment" model="calendar.alarm">
+            <field name="name">15 Minute(s), by e-mail</field>
+            <field name="duration" eval="15"/>
+            <field name="interval">minutes</field>
+            <field name="alarm_type">email</field>
+        </record>
+
+        <record id="accounting_appointment" model="calendar.appointment.type">
+            <field name="name">Odoo Accounting</field>
+            <field name="reminder_ids" eval="[(6, 0, [ref('alarm_mail_novobi_appointment')])]"/>
+            <field name="employee_ids" eval="[(6, 0, [ref('hr.employee_admin')])]"/>
+            <field name="question_ids" eval="[
+            (4, ref('accounting_checkbox_question')),
+            (4, ref('accounting_appointment_text_question'))
+            ]"/>
+            <field name="appointment_tz">US/Central</field>
+            <field name="novobi_appointment_type">accounting</field>
+            <field name="is_published">True</field>
+        </record>
+
+        <record id="novobi_appointment" model="calendar.appointment.type">
+            <field name="name">Novobi</field>
+            <field name="reminder_ids" eval="[(6, 0, [ref('alarm_mail_novobi_appointment')])]"/>
+            <field name="employee_ids" eval="[(6, 0, [ref('hr.employee_admin')])]"/>
+            <field name="appointment_tz">US/Central</field>
+            <field name="novobi_appointment_type">novobi</field>
+            <field name="is_published">True</field>
+        </record>
+    </data>
+    <data>
+        <record id="omniborders_appointment" model="calendar.appointment.type">
+            <field name="name">OmniBorders</field>
+            <field name="reminder_ids" eval="[(6, 0, [ref('alarm_mail_novobi_appointment')])]"/>
+            <field name="employee_ids" eval="[(6, 0, [ref('hr.employee_admin')])]"/>
+            <field name="appointment_tz">US/Central</field>
+            <field name="novobi_appointment_type">novobi</field>
+            <field name="is_published">True</field>
+        </record>
+    </data>
+</odoo>

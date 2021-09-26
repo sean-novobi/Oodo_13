@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <record id="notify_novobi_admin_when_lead_created" model="mail.template">
+        <field name="name">Notify admin when a CRM lead created</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="email_from">${object.company_id.partner_id.email_formatted |safe}</field>
+        <field name="email_to">${object.company_id.partner_id.email_formatted |safe}</field>
+        <field name="subject">There is a new CRM lead has just been created</field>
+        <field name="body_html" type="xml">
+            <table border="0" cellpadding="0" cellspacing="0" style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;"><tr><td align="center">
+                <table border="0" cellpadding="0" cellspacing="0" width="590" style="padding: 16px; background-color: white; color: #454748; border-collapse:separate;">
+                    <tbody>
+                        <!-- HEADER -->
+                        <tr>
+                            <td align="center" style="min-width: 590px;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                    <tr><td valign="middle">
+                                        % set company = object.company_id or object.user_id.company_id or user.company_id
+                                        <span style="font-size: 10px;">Lead/Opportunity</span><br/>
+                                        <span style="font-size: 20px; font-weight: bold;">
+                                            ${object.name}
+                                        </span>
+                                    </td><td valign="middle" align="right">
+                                    <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}"/>
+                                </td></tr>
+                                <tr><td colspan="2" style="text-align:center;">
+                                  <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:16px 0px 16px 0px;"/>
+                              </td></tr>
+                          </table>
+                      </td>
+                  </tr>
+                  <!-- CONTENT -->
+                  <tr>
+                    <td align="center" style="min-width:590px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width:590px;background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" style="font-size:13px;">
+                                        <div>
+                                            <p>
+                                                <span>NOVOBI has a new lead.</span><br />
+                                            </p><br/>
+                                            <p>
+                                                <span>Company: ${object.partner_name or ''}</span><br />
+                                                <span>Contact Name: ${object.contact_name or ''}</span><br />
+                                                <span>Phone Number: ${object.phone or ''}</span><br />
+                                                <span>Email: ${object.email_from or ''}</span><br />
+                                                <span>Topic: ${object.name or ''}</span><br />
+                                                <span>Guests Emails: ${object.guests_emails or ''}</span><br />
+<!--                                                <span>Message: ${object.description or ''}</span><br />-->
+                                            </p><br/>
+                                            % if object:
+                                            <div style="margin:16px 0px 16px 0px; text-align:center;" >
+                                                <a href="/web#id=${object.id}&amp;model=crm.lead&amp;view_type=form" style="background-color:#875A7B; padding: 10px; text-decoration: none; color: #fff; border-radius: 5px;">
+                                                    View Lead
+                                                </a>
+                                            </div>
+                                            % endif
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;">
+                                        <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- FOOTER -->
+                <tr>
+                    <td align="center" style="min-width: 590px; text-align:center;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                            <tr><td valign="middle">
+                                ${company.name}
+                            </td></tr>
+                            <tr><td valign="middle" style="opacity: 0.7;">
+                                ${company.phone}
+                                % if company.email
+                                | <a href="'mailto:%s' % ${company.email}" style="text-decoration:none; color: #454748;">${company.email}</a>
+                                % endif
+                                % if company.website
+                                | <a href="'%s' % ${company.website}" style="text-decoration:none; color: #454748;">${company.website}</a>
+                                % endif
+                            </td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </td></tr>
+    <!-- POWERED BY -->
+    <tr><td align="center" style="min-width: 590px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:separate;">
+          <tr><td style="text-align: center; font-size: 13px;">
+            Powered by <a target="_blank" href="https://www.odoo.com?utm_source=db&amp;utm_medium=website" style="color: #875A7B;">Odoo</a>
+        </td></tr>
+    </table>
+</td></tr>
+</table>
+</field>
+</record>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="calendar_appointment_type_view_form" model="ir.ui.view">
+            <field name="name">calendar.appointment.type.form</field>
+            <field name="model">calendar.appointment.type</field>
+            <field name="inherit_id" ref="website_calendar.calendar_appointment_type_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_published']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('novobi_appointment_type', 'not in', ['default', False])]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_calendar_meetings']" position="before">
+                    <button class="oe_stat_button" type="object"
+                            attrs="{'invisible': [('novobi_appointment_type', 'in', ['default', False])]}"
+                            name="action_draft_appointments"
+                            icon="fa-calendar">
+                        <field string="Draft Appointments" name="draft_count" widget="statinfo"></field>
+                    </button>
+                </xpath>
+                <xpath expr="//field[@name='location']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='country_ids']" position="after">
+                    <field name="zoom_password" attrs="{'invisible': [('novobi_appointment_type', 'in', ['default', False])]}"/>
+                    <field name="novobi_appointment_type" required="1"/>
+                    <field name="personal_meeting_path" attrs="{'invisible': [('novobi_appointment_type', 'in', ['default', 'accounting', False])], 'required': [('novobi_appointment_type', 'not in', ['default', 'accounting', False])]}" groups="base.group_no_one"/>
+                    <field name="website_id" required="1" options="{'no_create': 1, 'no_edit': 1, 'no_open': 1}"/>
+                </xpath>
+                <xpath expr="//field[@widget='appointment_employee_url']" position="after">
+                    <field name="work_email" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@widget='appointment_employee_url']" position="attributes">
+                    <attribute name="widget">employee_url</attribute>
+                    <attribute name="context">{'personal_meeting_path': parent.personal_meeting_path, 'appointment_type_website_token': parent.appointment_type_website_token}</attribute>
+                    <attribute name="attrs">{'column_invisible': [('parent.personal_meeting_path', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//group[@name='left_details']" position="inside">
+                    <field name="appointment_type_website_token" invisible="1"/>
+                    <field name="appointment_type_website_url" string="Appointment URL" widget="form_url" placeholder="e.g. https://novobi.com/booking/appointment/calendar" attrs="{'invisible': [('novobi_appointment_type', 'in', ['default', 'accounting', False])]}"/>
+                    <field name="appointment_type_website_title" placeholder="Demo For Smart Inventory" attrs="{'invisible': [('novobi_appointment_type', 'in', ['default', 'accounting', False])]}"/>
+                    <field name="appointment_type_website_question" placeholder="What are you looking for in a new or upgraded inventory system?" attrs="{'invisible': [('novobi_appointment_type', 'in', ['default', 'accounting', False])]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

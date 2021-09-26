@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_blacklist_mail_user,mail_blacklist_mail_group_user,nerp_setting.model_mail_blacklist_mail,base.group_user,1,1,1,1
+access_mail_blacklist_mail_public,mail_blacklist_mail_group_public,nerp_setting.model_mail_blacklist_mail,,1,0,0,0
+access_mail_blacklist_domain_user,mail_blacklist_domain_group_user,nerp_setting.model_mail_blacklist_domain,base.group_user,1,1,1,1
+access_mail_blacklist_domain_public,mail_blacklist_domain_group_public,nerp_setting.model_mail_blacklist_domain,,1,0,0,0

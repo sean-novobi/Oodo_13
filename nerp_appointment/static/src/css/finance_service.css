@@ -1,0 +1,419 @@
+.main-content {
+    margin-top: 0px;
+    font-family: 'SFProDisplay';
+}
+
+.section {
+    padding: 10px 0px;
+}
+
+.grey-bg-section {
+    background: #f6f6f6;
+}
+
+.o-section-common {
+    max-width: 970px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.o-narrow-wapper {
+    padding-left: 55px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.green-bg {
+    background: #21837f;
+}
+
+.orange-bg {
+    background: #e37525;
+}
+
+.purple-bg {
+    background: #805074;
+}
+
+.o-section-common .o-section-container {
+    font-family: 'SF UI Display Regular';
+    padding: 25px;
+}
+
+.o-section-common .o-section-container .header {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.65px;
+    color: #704866;
+}
+
+.o-section-common .o-section-container .logo-bg {
+    width: 100%;
+}
+
+.o-section-common .o-section-container .d-logo {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: 0.32px;
+    color: #242424;
+    margin: 10px 0px;
+}
+
+.odoo-accounting-book-form {
+    padding: 0px 15px;
+}
+
+.odoo-accounting-book-form .i-panel {
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    padding: 12px 30px;
+    margin: 5px 0px;
+}
+
+.md-form {
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.md-form .form-control {
+    font-size: 14px;
+    color: #565d61;
+}
+
+.md-form label {
+    font-size: 14px !important;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #565d61 !important;
+}
+
+.o-panel {
+    padding: 20px 0px;
+}
+
+.o-panel .o-header {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.41px;
+    color: #242424;
+}
+
+.t-header {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    color: #242424;
+}
+
+.custom-control.custom-checkbox {
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    padding: 14px 40px;
+    margin: 10px 0px;
+}
+
+.custom-control.custom-checkbox .custom-control-label {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    color: #242424;
+    padding-left: 10px;
+}
+
+.custom-control.custom-checkbox .custom-control-input:not(:checked):not(:indeterminate)~.custom-control-label:before {
+    border-radius: 2px;
+    border: #01010187 solid 1px;
+    outline: none !important;
+
+}
+
+.d-checkbox {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    color: #242424;
+    margin: 20px 0px;
+}
+
+.d-checkbox a {
+    color: #005fa4;
+}
+
+textarea.form-control::placeholder {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    color: #242424;
+    opacity: 0.5;
+}
+
+textarea.form-control {
+    border-radius: 8px;
+    border: solid 1px #979797;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.odoo-accounting-submit,
+.odoo-schedule-t {
+    border-radius: 8px !important;
+    background-color: #9d668f !important;
+    margin: 0 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--white) !important;
+}
+
+.support-section {
+    padding: 50px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f5f5f5);
+}
+
+.support-section .i-container-wrapper {
+    margin-top: 10px;
+}
+
+.support-section .s-image img {
+    max-width: 100%;
+}
+
+.support-section .i-content-wrapper .sp-content {
+    font-size: 14px;
+    letter-spacing: .44px;
+    color: #192646;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+.section .i-action-wrapper .sp-button {
+    transition: background-color .3s ease 0s, color .3s ease 0s, border-radius .3s ease 0s;
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #1E73BE;
+    padding: 10px 20px;
+    color: #FFF;
+    display: inline-block;
+}
+
+.section .i-action-wrapper #btn-accounting-sv, .section .i-action-wrapper #btn-request-demo {
+    border-radius: 20px;
+    box-shadow: 0 5px 10px 0 rgba(241, 179, 134, 0.5);
+    background-color: #e37525 !important;
+    color: #fff !important;
+    line-height: 25px;
+    width: 184px;
+    text-align: center;
+    margin-right: 5px;
+}
+.section .i-action-wrapper #btn-accounting-sv:hover, .section .i-action-wrapper #btn-request-demo:hover {
+    background-color: #d46718 !important;
+}
+
+.section .i-action-wrapper #btn-request-demo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: none;
+}
+
+.support-section .i-action-wrapper #btn-payroll {
+    border-radius: 20px;
+    box-shadow: 0 5px 10px 0 rgba(128, 80, 116, 0.5);
+    background-color: #805074 !important;
+    color: #fff !important;
+    line-height: 25px;
+    width: 184px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.support-section .i-action-wrapper #btn-payroll:hover {
+    background-color: #633a58 !important;
+}
+
+.support-section .i-action-wrapper #btn-booking:hover {
+    background-color: #741b27 !important;
+}
+
+.section .main-header-wrapper h2 {
+    padding-bottom: 15px;
+    padding-top: 20px;
+    font-size: 32px;
+    font-family: 'SF UI Display Bold';
+    color: #192646;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.section .par-wrapper,
+.section .par-bg-wrapper {
+    display: flex;
+}
+
+.section .par-wrapper .par-icon-wapper {
+    text-align: center;
+    align-self: center;
+    margin: 0px 40px;
+}
+
+.section .par-wrapper .par-icon-wapper img {
+    height: 120px;
+}
+
+.section .par-wrapper .par-icon-wapper.b-size img {
+    height: 175px;
+}
+
+.section .par-wrapper .par-d-wraper {
+    padding-top: 10px;
+}
+
+.section .par-wrapper .par-d-wraper p {
+    font-size: 14px;
+    letter-spacing: .44px;
+    color: #192646;
+}
+
+.section .par-bg-wrapper {
+    padding: 30px 20px;
+}
+
+.section .par-bg-wrapper .par-icon-wapper {
+    align-self: center;
+}
+
+.section .par-bg-wrapper .par-icon-wapper img {
+    width: 136px;
+}
+
+.section .par-bg-wrapper .par-info-wapper {
+    padding: 10px 20px 10px 60px;
+    color: #fff;
+}
+
+.section .par-bg-wrapper .par-info-wapper p {
+    font-size: 14px;
+    letter-spacing: .44px;
+}
+
+.contact-section {
+    padding: 60px 0 30px 0;
+    background-color: #805074;
+    width: 100%;
+}
+
+.contact-section h2 {
+    font-weight: 400;
+    font-size: 34px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 0;
+}
+
+.support-section .i-action-wrapper #btn-booking {
+    background-color: #741b47;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px 0 rgba(128, 80, 116, 0.5);
+    color: #fff !important;
+    line-height: 25px;
+    width: 184px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .o-section-common .o-section-container-s {
+        padding: 0px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .support-section{
+        padding:50px 10px;
+    }
+    .support-section .i-action-wrapper #btn-accounting-sv,
+    .support-section .i-action-wrapper #btn-payroll,
+    .support-section .i-action-wrapper #btn-booking {
+        width: 100%;
+        text-align: center;
+        font-size: 10px !important;
+    }
+
+    .support-section .i-action-wrapper #btn-payroll,
+    .support-section .i-action-wrapper #btn-booking {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .o-section-common .o-section-container {
+        padding: 0px;
+    }
+
+    .o-narrow-wapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .par-wrapper,
+    .par-bg-wrapper {
+        display: block !important;
+    }
+
+    .section .par-bg-wrapper {
+        position: relative;
+        padding: 30px 20px 160px 20px;
+    }
+
+    .section .par-bg-wrapper .par-icon-wapper {
+        position: absolute;
+        bottom: 30px;
+        left: 27%;
+    }
+
+    .section .par-bg-wrapper .par-info-wapper {
+        padding: 0px;
+    }
+    .section .par-wrapper .par-icon-wapper.b-size img {
+        width: 100%;
+        height:auto;
+    }
+    .support-section{
+        padding:10px;
+    }
+    .support-section .i-action-wrapper #btn-accounting-sv,
+    .support-section .i-action-wrapper #btn-payroll,
+    .support-section .i-action-wrapper #btn-booking {
+        width: 100%;
+        text-align: center;
+        font-size: 14px !important;
+        margin-bottom: 10px;
+    }
+}

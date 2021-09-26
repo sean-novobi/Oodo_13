@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="nerp_finance_appointment_1_session" model="service.packages">
+            <field name="name">Single Session</field>
+            <field name="quantity">1</field>
+            <field name="price">124</field>
+            <field name="package_type">finance_appointment</field>
+            <field name="product_template_id" ref="nerp_appointment.nerp_finance_appointment_support_session"/>
+            <field name="description">1 hour of training/support</field>
+        </record>
+
+        <record id="nerp_finance_appointment_5_session" model="service.packages">
+            <field name="name">5 Sessions</field>
+            <field name="quantity">5</field>
+            <field name="price">559</field>
+            <field name="package_type">finance_appointment</field>
+            <field name="product_template_id" ref="nerp_appointment.nerp_finance_appointment_support_session"/>
+            <field name="description">5 x 1-hour sessions of training/support</field>
+            <field name="discount_tag">10</field>
+        </record>        
+
+        <record id="nerp_finance_appointment_10_session" model="service.packages">
+            <field name="name">10 Sessions</field>
+            <field name="quantity">10</field>
+            <field name="price">999</field>
+            <field name="package_type">finance_appointment</field>
+            <field name="product_template_id" ref="nerp_appointment.nerp_finance_appointment_support_session"/>
+            <field name="description">10 x 1-hour sessions of training/support</field>
+            <field name="discount_tag">20</field>
+        </record>
+    </data>
+</odoo>

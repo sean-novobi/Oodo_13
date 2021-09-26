@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="novobi_appointment_summary" name="Website Appointment: Appointment Confirmed">
+        <t t-call="website.layout">
+            <t t-set="title">Appointment</t>
+            <div id="wrap" class="oe_structure oe_empty"/>
+            <div class="main-wrapper">
+                <div class="content">
+                    <div id="wrap" class="o_website_calendar o-website-common">
+                        <div class="oe_structure container mb128 o_website_calendar_appointment o-website-container o-website-container-s">
+                            <t t-if="message=='new'">
+                                <h4 class="header">Your Meeting is Confirmed</h4>
+                            </t>
+                            <t t-if="message=='reschedule'">
+                                <h4 class="header">Your Meeting is Rescheduled!</h4>
+                            </t>
+                            <t t-if="message=='cancel'">
+                                <p class="h-highlight">
+                                    <strong>Your Meeting has been cancelled</strong>
+                                </p>
+                            </t>
+                            <t t-if="not message">
+                                <p class="h-highlight">
+                                    <strong>Your Meeting Information</strong>
+                                </p>
+                                <t t-if="no_active">
+                                    <p class="h-highlight">
+                                        <strong>This meeting has been cancelled.</strong>
+                                    </p>
+                                </t>
+                            </t>
+                            <p t-if="event.active and (message=='no-cancel' or message=='no-reschedule')" class="h-highlight">
+                                <strong>
+                                    Your appointment is coming up!
+                                </strong>
+                                <br/>
+                                If you are unable to attend, please contact
+                                <a href="mailto:contact@novobi.com">contact@novobi.com</a>
+                                to cancel or reschedule your appointment.
+                            </p>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <table id="summary-appointment">
+                                                <tr>
+                                                    <th>
+                                                        <div class="t-schedule">When</div>
+                                                    </th>
+                                                    <td class="padding-col"></td>
+                                                    <td>
+                                                        <div class="c-schedule">
+                                                            <t t-esc="datetime_start"/>
+                                                            <i class="text-muted">(timezone:<t t-esc="timezone"/>)
+                                                            </i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <div class="t-schedule">Duration</div>
+                                                    </th>
+                                                    <td class="padding-col"></td>
+                                                    <td>
+                                                        <div class="c-schedule">
+                                                            <t t-esc="int(event.duration * 60)"/>
+                                                            minutes
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <div class="t-schedule">Location</div>
+                                                    </th>
+                                                    <td class="padding-col"></td>
+                                                    <td>
+                                                        <div class="c-schedule">
+                                                            <t t-esc="event.zoom_join_url"/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p class="d-header">The meeting will be on Zoom. Please <a href="https://zoom.us/download" target="_blank">download Zoom</a> ahead
+                                                of time to avoid delay.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <t t-if="event.state == 'closed' and event.active == False">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 v-hr">
+                                        <div class="b-schedule">
+                                            <t t-if="event.employee_id">
+                                                <a role="button" class="btn btn-block odoo-schedule-t cancel"
+                                                   t-attf-href="/booking/appointment/calendar?#{event_query}">
+                                                    <i class="fa fa-fw fa-refresh"></i>Reschedule
+                                                </a>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </t>
+                                <div id="appointment_controller" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 v-hr"
+                                     t-if="event.stage_id.state == 'open'">
+                                    <div class="b-schedule">
+                                        <a role="button" class="btn odoo-schedule-t"
+                                           t-attf-href="/booking/appointment/ics/#{event.access_token}.ics">
+                                            <i class="fa fa-fw fa-arrow-right"></i>Add to iCal/Outlook
+                                        </a>
+                                    </div>
+                                    <div class="b-schedule">
+                                        <a role="button" class="btn odoo-schedule-t" t-att-href="google_url">
+                                            <i class="fa fa-fw fa-arrow-right"></i>Add to Google Calendar
+                                        </a>
+                                    </div>
+                                    <t t-if="event.appointment_type_id">
+                                        <div class="b-schedule">
+                                            <a role="button" class="btn odoo-schedule-t cancel"
+                                               t-attf-href="/booking/appointment/calendar?access_token=#{event.access_token}&amp;reschedule=True">
+                                                <i class="fa fa-fw fa-refresh"></i>Reschedule
+                                            </a>
+                                        </div>
+                                        <div class="b-schedule">
+                                            <a role="button" class="btn odoo-schedule-t cancel"
+                                               href="#"
+                                               id="cancel-button"
+                                               data-toggle="modal"
+                                               data-target="#cancel-confirmation">
+                                                <i class="fa fa-fw fa-times"></i>Cancel
+                                            </a>
+                                        </div>
+                                    </t>
+                                    <div class="modal fade custom-modal" data-keyboard="false" data-backdrop="static"
+                                         id="cancel-confirmation" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Confirmation</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="m-body">
+                                                        <div class="m-item m-t">
+                                                            Please confirm if you want to cancel
+                                                            your meeting
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                            id="confirm-cancel"
+                                                            t-att-data-access-token="event.access_token"
+                                                            t-att-data-url="'/booking/appointment/cancel'"
+                                                            class="btn custom-btn custom-btn-primary">
+                                                        Yes
+                                                    </button>
+                                                    <button type="button" class="btn custom-btn custom-btn-default"
+                                                            data-dismiss="modal"
+                                                            id="do-not-cancel">
+                                                        No
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="wrap" class="oe_structure oe_empty"/>
+        </t>
+    </template>
+</odoo>

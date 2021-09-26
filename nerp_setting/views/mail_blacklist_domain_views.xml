@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mail_blacklist_domain_tree" model="ir.ui.view">
+        <field name="model">mail.blacklist.domain</field>
+        <field name="arch" type="xml">
+            <tree string="Mail Blacklist Domain">
+                <field name="name"/>
+                <field name="domain"/>
+                <field name="model_ids" widget="many2many_tags"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_mail_blacklist_domain_form" model="ir.ui.view">
+        <field name="name">mail.blacklist.domain.form</field>
+        <field name="model">mail.blacklist.domain</field>
+        <field name="arch" type="xml">
+            <form string="Mail Blacklist Domain">
+                <sheet>
+                    <group>
+                        <group string="Description">
+                            <field name="name"/>
+                            <field name="domain"/>
+                        </group>
+                        <group string="Apply On">
+                            <field name="model_ids" widget="many2many_tags"/>
+                            <field name="exception_rule"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group/>
+                        <group>
+                            <div>
+                                <div>We only support 4 cases: subject (Subject of Email), from (email of sender), cc (list email cc), body (Body of Email)</div>
+                                <div>The field must follow these below rules</div>
+                                <div>- With 1 condition for Subject: <em>{"subject": "Lead: Novobi"}</em> -> the email with Subject containing <em>Lead: Novobi</em> will be processed</div>
+                                <div>- With 2 conditions: <em>{"subject": "Lead: Novobi", "from": "abc@novobi.com"}</em> and so on</div>
+                                <div>- Must use double quote (")</div>
+                            </div>
+                        </group>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mail_blacklist_domain_search" model="ir.ui.view">
+        <field name="name">mail.blacklist.domain.search</field>
+        <field name="model">mail.blacklist.domain</field>
+        <field name="arch" type="xml">
+            <search string="Search Mail Blacklist Domain">
+                <field name="name" string="Name"/>
+                <field name="domain" string="Blacklist Domain - @"/>
+                <field name="model_ids" string="Apply on Models"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_model_mail_blacklist_domain" model="ir.actions.act_window">
+        <field name="name">Mail Blacklist Domain</field>
+        <field name="res_model">mail.blacklist.domain</field>
+        <field name="context">{}</field>
+        <field name="view_id" ref="view_mail_blacklist_domain_tree"/>
+    </record>
+
+    <menuitem parent="base.menu_email" id="action_mail_blacklist_domain_tree" action="action_model_mail_blacklist_domain" name="Mail Blacklist Domain" sequence="15" groups="base.group_no_one"/>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="draft_stage" model="calendar.event.stage">
+            <field name="name">Draft</field>
+            <field name="sequence">10</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="open_stage" model="calendar.event.stage">
+            <field name="name">Open</field>
+            <field name="sequence">20</field>
+            <field name="state">open</field>
+        </record>
+        <record id="closed_stage" model="calendar.event.stage">
+            <field name="name">Close</field>
+            <field name="sequence">90</field>
+            <field name="state">closed</field>
+        </record>
+    </data>
+</odoo>

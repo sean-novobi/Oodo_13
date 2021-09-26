@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_company_form_inherit_email_reply_to" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.email.reply.to</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Configuration">
+                    <group>
+                        <group string="Web Base URL">
+                            <field name="web_base_url" placeholder="e.g. erp.novobi.com"/>
+                        </group>
+                        <group string="Mail Aliases">
+                            <field name="alias_domain" placeholder="e.g. domain.com"/>
+                            <field name="email_reply_to" string="Email Reply To" placeholder="e.g. catchall@domain.com"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

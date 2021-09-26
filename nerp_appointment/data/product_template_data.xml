@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="nerp_discount_product" model="product.template">
+            <field name="name">Discount</field>
+            <field name="list_price">0</field>
+            <field name="standard_price">0</field>
+            <field name="type">service</field>
+            <field name="default_code">nerp_discount</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="taxes_id" eval="False"/>
+        </record>
+
+        <record id="nerp_finance_appointment_support_session" model="product.template">
+            <field name="name">Finance Support Session</field>
+            <field name="list_price">124</field>
+            <field name="standard_price">0</field>
+            <field name="type">service</field>
+            <field name="default_code">finance_appointment_support_session</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="taxes_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_res_config_settings_view_form_inherit" model="ir.ui.view">
+        <field name="name">crm.res.config.settings.view.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='business_documents']" position="after">
+                <div id="default_setting">
+                    <h2>
+                        CRM Lead Default Sales Team
+                    </h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="sale_team_id"/>
+                                <div class="text-muted">
+                                    <field name="sale_team_id" options="{'no_create_edit': True, 'no_open': True}"/>
+                                </div>
+                                <div class="text-muted" id="msg_default_sale_team">
+                                    Allow user set default Sales Team when creating a Lead in Odoo back-end
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

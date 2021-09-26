@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Novobi Appointment">
+        <xpath expr="." position="inside">
+<!--            <script type="text/javascript"-->
+<!--                    src="/nerp_appointment/static/lib/moment.js"></script>-->
+            <script type="text/javascript"
+                    src="/nerp_appointment/static/lib/moment-timezone-with-data-10-year-range.js"></script>
+            <script type="text/javascript" src="/nerp_appointment/static/src/js/appointment_calendar.js"/>
+            <script type="text/javascript" src="/nerp_appointment/static/src/js/services_online_booking.js"/>
+            <script type="text/javascript" src="/nerp_appointment/static/src/js/personal_online_booking.js"/>
+            <script type="text/javascript" src="/nerp_appointment/static/src/js/appointment_form_validation.js"/>
+            <script type="text/javascript" src="/nerp_appointment/static/lib/notify.min.js"></script>
+            <link rel="stylesheet" type="text/scss" href="/nerp_appointment/static/src/scss/finance_style.scss"/>
+            <link rel="stylesheet" type="text/css" href="/nerp_appointment/static/src/css/finance_appointment.css"/>
+            <link rel="stylesheet" type="text/css" href="/nerp_appointment/static/src/css/novobi_appointment.css"/>
+        </xpath>
+        <xpath expr="//link[last()]" position="after">
+<!--            <link href="/theme_common/static/src/css/flag-icon.min.css"-->
+<!--                  rel="stylesheet"/>-->
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="/nerp_appointment/static/src/css/all.css"/>
+            <!-- Bootstrap core CSS -->
+            <!--            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"-->
+            <!--                  rel="stylesheet"/>-->
+            <!-- Material Design Bootstrap -->
+            <!--            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet"/>-->
+<!--            <link rel="stylesheet" type="text/css"-->
+<!--                  href="/theme_common/static/src/css/font-awesome.min.css"/>-->
+        </xpath>
+        <!--        <xpath expr="//script[last()]" position="after">-->
+        <!--            <script type="text/javascript"-->
+        <!--                    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>-->
+        <!--            <script type="text/javascript"-->
+        <!--                    src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.js"></script>-->
+        <!--        </xpath>-->
+    </template>
+
+    <template id="assets_backend" inherit_id="website.assets_backend" name="Event URL">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/nerp_appointment/static/src/js/employee_url.js"/>
+        </xpath>
+    </template>
+
+    <!--    <template id="nerp_assets_frontend" name="NERP Website Assets">-->
+    <!--        <script type="text/javascript"-->
+    <!--                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>-->
+    <!-- Bootstrap tooltips -->
+    <!--        <script type="text/javascript"-->
+    <!--                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>-->
+    <!--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+    <!-- MDB core JavaScript -->
+    <!--        <script type="text/javascript"-->
+    <!--                src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.js"></script>-->
+    <!--    </template>-->
+    <!--    <template id="nerp_assets_frontend" inherit_id="nerp_frontend.nerp_assets_frontend" name="Novobi Appointment">-->
+    <!--        <xpath expr="." position="inside">-->
+
+    <!--            Font Awesome-->
+    <!--            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>-->
+    <!--            &lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
+    <!--            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"-->
+    <!--                  rel="stylesheet"/>-->
+    <!--            &lt;!&ndash; Material Design Bootstrap &ndash;&gt;-->
+    <!--            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet"/>-->
+
+    <!--        </xpath>-->
+    <!--    </template>-->
+</odoo>

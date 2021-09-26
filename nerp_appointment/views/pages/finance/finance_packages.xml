@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="finance_suppport_session_packages" name="Novobi Appointment: Select Packages">
+        <t t-call="website.layout">
+            <t t-set="title">Appointment</t>
+            <div id="wrap" class="oe_structure oe_empty"/>
+            <div class="main-wrapper">
+                <div class="content">
+                    <div id="wrap" class="o_website_calendar">
+                        <div class="oe_structure container mb128">
+                            <h1 class="o_page_header">Select your Service Package</h1>
+                            <div class="mb8"></div>
+                            <div id="packages_list">
+                                <div class="sp-items">
+                                    <div class="row">
+                                        <t t-foreach="packages" t-as="package">
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                                                <div class="sp-item">
+                                                    <div class="sp-inner-item">
+                                                        <div class="sp-item-t">
+                                                            <div class="sp-item-wrapper">
+                                                                <div class="sp-item-text sp-item-thead">
+                                                                    <t t-esc="package['name']"></t>
+                                                                </div>
+                                                                <div class="sp-item-text sp-item-tbody">
+                                                                    <t t-esc="package['price']"/>$
+                                                                </div>
+                                                                <div class="sp-item-text sp-item-spanning">
+                                                                    <t t-esc="package['discount_tag']"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sp-item-b">
+                                                            <div class="sp-item-wrapper">
+                                                                <div class="sp-item-text sp-item-thead">
+                                                                    <t t-esc="package['desc']"></t>
+                                                                </div>
+                                                                <div class="sp-item-text sp-item-tbody">
+                                                                    Access to session recording
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <!--                                                        <a role="button" class="btn odoo-schedule-t buy-package-now"-->
+                                                        <!--                                                           t-attf-href="/services/checkout?quantity=#{package['quantity']}">-->
+                                                        <!--                                                            Buy Now-->
+                                                        <!--                                                        </a>-->
+                                                        <a type="button"
+                                                           class="btn btn-block custom-btn-buy buy-package-now for-package"
+                                                           t-attf-href="/services/checkout?quantity=#{package['quantity']}">
+                                                            Buy Now
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                                            <div class="sp-item">
+                                                <div class="sp-inner-item">
+                                                    <div class="sp-item-t">
+                                                        <div class="sp-item-wrapper">
+                                                            <div class="sp-item-text sp-item-thead">
+                                                                Custom/Ongoing Support
+                                                            </div>
+                                                            <div class="sp-item-text sp-item-tbody">Contact Us</div>
+                                                            <div class="sp-item-text sp-item-spanning">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sp-item-b">
+                                                        <div class="sp-item-wrapper">
+                                                            <div class="sp-item-text sp-item-thead">
+                                                                Not sure what you need? Or require custom or ongoing
+                                                                support?
+                                                            </div>
+                                                            <div class="sp-item-text sp-item-tbody">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a type="button"
+                                                       class="btn btn-block custom-btn-buy buy-package-now"
+                                                       href="https://odoo-accounting.com/contact-us/"
+                                                       target="_blank">
+                                                        Contact Us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="wrap" class="oe_structure oe_empty"/>
+        </t>
+    </template>
+</odoo>

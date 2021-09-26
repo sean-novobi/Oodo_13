@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="novobi_appointment_not_found" name="Novobi Appointment Not Found">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty"/>
+            <div style="margin: 15px auto;width: 600px;font-weight: 600;font-size: 15px;">
+                An error has occurred, please contact Novobi Support Speacialist at 512-522-2837 Hehe
+            </div>
+            <div style="height: 100px;background: #805074;"/>
+            <div id="wrap" class="oe_structure oe_empty"/>
+        </t>
+    </template>
+</odoo>
